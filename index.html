@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qubru — Compliance & records intelligence for insurance carriers</title>
+  <meta name="description" content="Qubru turns unstructured insurance documents — policies, claims, correspondence — into a governed, searchable knowledge graph, with classification, retention, and audit built in." />
+
+  <!-- Open Graph / social -->
+  <meta property="og:title" content="Qubru" />
+  <meta property="og:description" content="AI-native compliance and records intelligence for insurance carriers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://qubru.com" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23201c50'/><text x='16' y='22' font-size='18' font-family='Arial' font-weight='700' fill='%23ec136e' text-anchor='middle'>Q</text></svg>" />
+
+  <style>
+    :root {
+      /* Qubru brand tokens — carried from the product (src/index.css). */
+      --brand: #ec136e;            /* pink */
+      --brand-press: #c70f5c;
+      --brand-dark: #201c50;       /* navy */
+      --brand-light: #fde8f3;      /* pink tint */
+      --navy-tint: #eeedf8;
+      --bg: #f7f7f5;
+      --bg-primary: #ffffff;
+      --bg-tertiary: #ededea;
+      --ink: #1a1818;
+      --ink-soft: #6b6b66;
+      --ink-faint: #9c9c96;
+      --line: rgba(0,0,0,0.09);
+      --line-strong: rgba(0,0,0,0.16);
+      --radius: 14px;
+      --maxw: 1080px;
+      --shadow: 0 1px 2px rgba(32,28,80,.05), 0 10px 28px rgba(32,28,80,.07);
+      --shadow-hover: 0 4px 10px rgba(32,28,80,.07), 0 18px 44px rgba(32,28,80,.13);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(820px 440px at 80% -10%, var(--brand-light) 0%, rgba(253,232,243,0) 62%) no-repeat,
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { color: var(--brand-press); }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    header {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: saturate(140%) blur(8px);
+      background: rgba(247,247,245,0.82);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -.2px; color: var(--brand-dark); font-size: 19px; }
+    .logo {
+      width: 30px; height: 30px; border-radius: 8px;
+      background: var(--brand-dark);
+      display: grid; place-items: center; color: var(--brand); font-weight: 800; font-size: 17px;
+      box-shadow: 0 4px 12px rgba(32,28,80,.28);
+    }
+    .nav-links { display: flex; gap: 26px; align-items: center; }
+    .nav-links a { color: var(--ink-soft); font-size: 15px; font-weight: 500; }
+    .nav-links a:hover { color: var(--brand-dark); }
+    .btn {
+      display: inline-block; padding: 11px 18px; border-radius: 10px;
+      background: var(--brand); color: #fff; font-weight: 600; font-size: 15px;
+      border: 1px solid var(--brand); transition: transform .08s ease, box-shadow .2s ease, background .15s ease;
+      box-shadow: 0 6px 16px rgba(236,19,110,.26);
+    }
+    .btn:hover { color: #fff; background: var(--brand-press); transform: translateY(-1px); box-shadow: 0 10px 24px rgba(236,19,110,.36); }
+    .nav-links a.btn, .nav-links a.btn:hover { color: #fff; }
+    .btn.ghost { background: #fff; border: 1px solid var(--line-strong); color: var(--brand-dark); box-shadow: none; }
+    .btn.ghost:hover { border-color: var(--brand-dark); color: var(--brand-dark); background: #fff; }
+
+    /* Hero */
+    .hero { padding: 92px 0 64px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; letter-spacing: .5px; text-transform: uppercase;
+      color: var(--brand); border: 1px solid var(--brand-light); background: var(--brand-light);
+      padding: 6px 12px; border-radius: 999px; margin-bottom: 22px; font-weight: 700;
+    }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--brand); box-shadow: 0 0 0 3px rgba(236,19,110,.18); }
+    h1 { font-size: clamp(34px, 5.2vw, 56px); line-height: 1.06; margin: 0 0 18px; letter-spacing: -1.2px; color: var(--brand-dark); font-weight: 800; }
+    h1 .grad { color: var(--brand); }
+    .lede { font-size: clamp(17px, 2.2vw, 21px); color: var(--ink-soft); max-width: 660px; margin: 0 0 30px; }
+    .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .cta-note { color: var(--ink-faint); font-size: 14px; }
+
+    /* Sections */
+    section { padding: 56px 0; }
+    .section-head { max-width: 640px; margin-bottom: 38px; }
+    .kicker { color: var(--brand); font-weight: 700; font-size: 14px; letter-spacing: .4px; text-transform: uppercase; margin: 0 0 10px; }
+    h2 { font-size: clamp(26px, 3.4vw, 36px); margin: 0 0 12px; letter-spacing: -.6px; color: var(--brand-dark); font-weight: 700; }
+    .section-head p { color: var(--ink-soft); font-size: 17px; margin: 0; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .card {
+      background: var(--bg-primary);
+      border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px;
+      box-shadow: var(--shadow);
+      transition: border-color .2s ease, transform .12s ease, box-shadow .2s ease;
+    }
+    .card:hover { border-color: var(--line-strong); transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .card .ic { width: 44px; height: 44px; border-radius: 11px; background: var(--brand-light); border: 1px solid #f6d4e6; display: grid; place-items: center; margin-bottom: 16px; font-size: 20px; }
+    .card h3 { margin: 0 0 8px; font-size: 18px; color: var(--brand-dark); font-weight: 700; }
+    .card p { margin: 0; color: var(--ink-soft); font-size: 15px; }
+
+    /* Audience strip */
+    .audience { background: var(--navy-tint); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .audience .grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .audience .card { background: transparent; border: none; padding: 14px 18px; box-shadow: none; }
+    .audience .card:hover { transform: none; box-shadow: none; }
+    .audience h3 { color: var(--brand-dark); }
+
+    /* How it works */
+    .steps { counter-reset: step; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+    .step { position: relative; padding: 30px 22px 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-primary); box-shadow: var(--shadow); }
+    .step::before {
+      counter-increment: step; content: counter(step);
+      position: absolute; top: -16px; left: 22px;
+      width: 34px; height: 34px; border-radius: 9px;
+      background: var(--brand-dark); color: #fff;
+      display: grid; place-items: center; font-weight: 700; box-shadow: 0 6px 14px rgba(32,28,80,.32);
+    }
+    .step h3 { margin: 8px 0 6px; font-size: 17px; color: var(--brand-dark); }
+    .step p { margin: 0; color: var(--ink-soft); font-size: 15px; }
+
+    /* CTA band */
+    .band {
+      margin: 20px auto; border-radius: 18px;
+      background: var(--brand-dark);
+      padding: 52px 36px; text-align: center; box-shadow: var(--shadow);
+    }
+    .band h2 { margin: 0 0 10px; color: #fff; }
+    .band p { color: #c9c6e4; max-width: 560px; margin: 0 auto 26px; }
+    .band .btn { background: var(--brand); border-color: var(--brand); }
+    .band .btn:hover { background: #fff; color: var(--brand-dark); border-color: #fff; }
+
+    footer { border-top: 1px solid var(--line); padding: 40px 0; color: var(--ink-faint); font-size: 14px; background: var(--bg); }
+    .foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+    .pill { display:inline-block; font-size:12px; color: var(--ink-soft); border:1px solid var(--line-strong); border-radius:999px; padding:4px 10px; background:#fff; }
+
+    @media (max-width: 680px) {
+      .nav-links a:not(.btn) { display: none; }
+      .hero { padding: 64px 0 40px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand"><span class="logo">Q</span> Qubru</div>
+      <nav class="nav-links">
+        <a href="#product">Product</a>
+        <a href="#how">How it works</a>
+        <a href="#who">Who it's for</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow"><span class="dot"></span> Private pilot · insurance carriers</span>
+        <h1>Compliance &amp; records intelligence,<br /><span class="grad">built for insurance.</span></h1>
+        <p class="lede">
+          Qubru turns the unstructured documents carriers live in — policies, claims, endorsements,
+          correspondence — into a governed, searchable knowledge graph. Classification, retention,
+          and a tamper-evident audit trail are built in, not bolted on.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="#product">See what it does</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT -->
+    <section id="product">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">The product</p>
+          <h2>From document chaos to governed knowledge</h2>
+          <p>One pipeline: ingest any document, understand it, connect it, and govern it — with the controls a regulated carrier actually needs.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <div class="ic">📄</div>
+            <h3>Document understanding</h3>
+            <p>Ingest PDFs and scans, then classify and extract the entities that matter — parties, policies, claims, dates, amounts — with the model you choose.</p>
+          </div>
+          <div class="card">
+            <div class="ic">🕸️</div>
+            <h3>Entity &amp; relationship graph</h3>
+            <p>Every document resolves into a connected graph, unifying the same party or policy across files so you can actually trace what relates to what.</p>
+          </div>
+          <div class="card">
+            <div class="ic">🛡️</div>
+            <h3>Retention &amp; disposition</h3>
+            <p>Encode retention rules once and let the system surface what's due for review or disposition — turning policy into enforceable workflow.</p>
+          </div>
+          <div class="card">
+            <div class="ic">🔒</div>
+            <h3>Audit &amp; access control</h3>
+            <p>Tenant isolation, least-privilege access, and a tamper-evident audit trail on every action — designed for data-residency-sensitive regimes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" style="padding-top:24px;">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">How it works</p>
+          <h2>Four steps, one governed system of record</h2>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <h3>Ingest</h3>
+            <p>Drop in documents from your existing stores. Qubru handles extraction, including scanned and image-based files.</p>
+          </div>
+          <div class="step">
+            <h3>Classify</h3>
+            <p>Each document is triaged and labelled, so the right retention and handling rules apply automatically.</p>
+          </div>
+          <div class="step">
+            <h3>Connect</h3>
+            <p>Entities are extracted and unified into a cross-document graph you can explore and query.</p>
+          </div>
+          <div class="step">
+            <h3>Govern</h3>
+            <p>Retention, disposition, access, and audit run continuously — with every action recorded.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO -->
+    <section id="who" class="audience">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Who it's for</p>
+          <h2>Built for the people accountable for the records</h2>
+        </div>
+        <div class="grid">
+          <div class="card"><h3>Compliance officers</h3><p>See what you hold, prove how it's handled, and stay ahead of retention obligations.</p></div>
+          <div class="card"><h3>Records &amp; data managers</h3><p>Replace scattered folders with one governed, searchable system of record.</p></div>
+          <div class="card"><h3>Carrier IT &amp; security</h3><p>Deploy with tenant isolation, least-privilege access, and data-residency controls.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING STATEMENT (no contact CTA) -->
+    <section id="pilot">
+      <div class="wrap">
+        <div class="band">
+          <h2>In private pilot with insurance carriers</h2>
+          <p>Qubru is an AI-native compliance and records platform, currently being piloted with carrier teams.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div class="brand" style="font-size:16px;"><span class="logo" style="width:26px;height:26px;font-size:15px;">Q</span> Qubru</div>
+      <div>© 2026 Qubru. Compliance &amp; records intelligence for insurance carriers.</div>
+      <span class="pill">Private pilot · pre-launch</span>
+    </div>
+  </footer>
+</body>
+</html>
