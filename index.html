@@ -233,7 +233,8 @@ table.bc td.hl{color:var(--pink);font-weight:800;font-size:22px}
 .pbox.dark li{padding:10px 0 10px 26px;position:relative;font-size:16px;border-top:1px solid rgba(255,255,255,.12)}
 .pbox.dark li:first-child{border-top:0}
 .pbox.dark li::before{content:'';position:absolute;left:0;top:19px;width:10px;height:10px;border-radius:50%;background:var(--pink)}
-.after{grid-column:1 / span 2;background:var(--pink-tint);border-radius:12px;padding:22px 28px;color:var(--navy);font-size:16px}
+.pilot.one{grid-template-columns:1fr}.pilot.one ul{display:grid;grid-template-columns:1fr 1fr;column-gap:56px}.pilot.one li:nth-child(2){border-top:0}
+.after{grid-column:1 / -1;background:var(--pink-tint);border-radius:12px;padding:22px 28px;color:var(--navy);font-size:16px}
 
 /* FAQ */
 .faq{max-width:860px}
@@ -262,6 +263,8 @@ footer a{color:var(--navy);text-decoration:none;margin-left:20px}
   .gap .arrow{transform:rotate(90deg);padding:8px 0}
   .value,.ptabs,.who,.pilot,.worth,.stats{grid-template-columns:1fr}
   .after{grid-column:1}
+  .pilot.one ul{grid-template-columns:1fr}
+  .pilot.one li:nth-child(2){border-top:1px solid rgba(255,255,255,.12)}
   .shot,.shot.rev{grid-template-columns:1fr}
   .shot.rev .frame{order:0}
   .arch{grid-template-columns:1fr}
@@ -449,9 +452,8 @@ footer a{margin-left:0}
 <section class="section" id="pilot">
   <span class="section-label">How we start</span>
   <h2>A controlled pilot that measures the money</h2>
-  <p class="lead">Defined scope, defined duration and business outcomes agreed up front.</p>
-  <div class="pilot">
-    <div class="pbox"><div class="lbl">PILOT SCOPE · 4–6 MONTHS</div><div class="prow"><b>1</b><span>line of business</span></div><div class="prow"><b>10K</b><span>policies, statistically significant</span></div><div class="prow"><b>2K</b><span>claims, enough to observe a full cycle</span></div></div>
+  <p class="lead">Choose one line of business and one process, such as claims. Business outcomes agreed up front.</p>
+  <div class="pilot one">
     <div class="pbox dark"><div class="lbl">SUCCESS MEASURED IN BUSINESS TERMS</div><ul><li>Points of loss ratio identified on your book</li><li>Profitability by broker and intermediary</li><li>Reserve adequacy gap by segment</li><li>Time saved per submission and per claim</li></ul></div>
     <div class="after"><b>After the pilot:</b> an annual subscription agreed up front. Expand to a second line of business or close out cleanly.</div>
   </div>

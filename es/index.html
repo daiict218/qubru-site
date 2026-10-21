@@ -233,7 +233,8 @@ table.bc td.hl{color:var(--pink);font-weight:800;font-size:22px}
 .pbox.dark li{padding:10px 0 10px 26px;position:relative;font-size:16px;border-top:1px solid rgba(255,255,255,.12)}
 .pbox.dark li:first-child{border-top:0}
 .pbox.dark li::before{content:'';position:absolute;left:0;top:19px;width:10px;height:10px;border-radius:50%;background:var(--pink)}
-.after{grid-column:1 / span 2;background:var(--pink-tint);border-radius:12px;padding:22px 28px;color:var(--navy);font-size:16px}
+.pilot.one{grid-template-columns:1fr}.pilot.one ul{display:grid;grid-template-columns:1fr 1fr;column-gap:56px}.pilot.one li:nth-child(2){border-top:0}
+.after{grid-column:1 / -1;background:var(--pink-tint);border-radius:12px;padding:22px 28px;color:var(--navy);font-size:16px}
 
 /* FAQ */
 .faq{max-width:860px}
@@ -262,6 +263,8 @@ footer a{color:var(--navy);text-decoration:none;margin-left:20px}
   .gap .arrow{transform:rotate(90deg);padding:8px 0}
   .value,.ptabs,.who,.pilot,.worth,.stats{grid-template-columns:1fr}
   .after{grid-column:1}
+  .pilot.one ul{grid-template-columns:1fr}
+  .pilot.one li:nth-child(2){border-top:1px solid rgba(255,255,255,.12)}
   .shot,.shot.rev{grid-template-columns:1fr}
   .shot.rev .frame{order:0}
   .arch{grid-template-columns:1fr}
@@ -449,9 +452,8 @@ footer a{margin-left:0}
 <section class="section" id="pilot">
   <span class="section-label">Cómo empezamos</span>
   <h2>Un piloto controlado que mide el dinero</h2>
-  <p class="lead">Alcance definido, duración definida y resultados de negocio acordados desde el inicio.</p>
-  <div class="pilot">
-    <div class="pbox"><div class="lbl">ALCANCE DEL PILOTO · 4–6 MESES</div><div class="prow"><b>1</b><span>línea de negocio</span></div><div class="prow"><b>10K</b><span>pólizas, estadísticamente significativas</span></div><div class="prow"><b>2K</b><span>siniestros, suficientes para ver un ciclo completo</span></div></div>
+  <p class="lead">Elige una línea de negocio y un proceso, como siniestros. Resultados de negocio acordados desde el inicio.</p>
+  <div class="pilot one">
     <div class="pbox dark"><div class="lbl">ÉXITO MEDIDO EN TÉRMINOS DE NEGOCIO</div><ul><li>Puntos de siniestralidad identificados en tu cartera</li><li>Rentabilidad por corredor e intermediario</li><li>Brecha de suficiencia de reservas por segmento</li><li>Tiempo ahorrado por solicitud y por siniestro</li></ul></div>
     <div class="after"><b>Después del piloto:</b> una suscripción anual acordada desde el inicio. Amplía a una segunda línea de negocio o cierra de forma limpia.</div>
   </div>
